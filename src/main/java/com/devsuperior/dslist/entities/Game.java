@@ -23,14 +23,19 @@ public class Game {
     private String genre;
     private String platforms;
     private String imgUrl;
+
+    @Column(columnDefinition = "TEXT")
     private String shortDescription;
+
+    @Column(columnDefinition = "TEXT")
     private String longDescription;
+    private Double score;
 
     public Game() {
     }
 
     public Game(Long id, String title, Integer year, String genre, String platforms, String imgUrl,
-                String shortDescription, String longDescription) {
+                String shortDescription, String longDescription, Double score) {
         this.id = id;
         this.title = title;
         this.year = year;
@@ -39,6 +44,7 @@ public class Game {
         this.imgUrl = imgUrl;
         this.shortDescription = shortDescription;
         this.longDescription = longDescription;
+        this.score = score;
     }
 
     public Long getId() {
@@ -103,6 +109,14 @@ public class Game {
 
     public void setLongDescription(String longDescription) {
         this.longDescription = longDescription;
+    }
+
+    public Double getScore() {
+        return score;
+    }
+
+    public void setScore(Double score) {
+        this.score = score;
     }
 
     @Override
