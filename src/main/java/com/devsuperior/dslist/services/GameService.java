@@ -23,7 +23,7 @@ public class GameService {
     }
 
     @Transactional(readOnly = true)
-    public List<GameMinDTO> findAll(){
+    public List<GameMinDTO> findAll() {
         List<Game> result = gameRepository.findAll();
         List<GameMinDTO> dto = result.stream().map(x -> new GameMinDTO(x)).toList(); //transforma uma lista de Game em uma lista de GameMinDTO
         return dto;
